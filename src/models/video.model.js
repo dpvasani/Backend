@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
+// Handle Aggregate Pipeline Used In Production Grade
 
 const videoSchema = new Schema(
   {
@@ -8,7 +9,7 @@ const videoSchema = new Schema(
       required: true,
     },
     thumbnail: {
-      type: String, //cloudinary url
+      type: String, //Cloudinary url
       required: true,
     },
     title: {
@@ -20,7 +21,7 @@ const videoSchema = new Schema(
       required: true,
     },
     duration: {
-      type: Number,
+      type: Number, // Actually Its Given By Cloudinary
       required: true,
     },
     views: {

@@ -50,7 +50,7 @@ const userSchema = new Schema(
     timestamps: true,
   }
 );
-
+// Pre Hook Do Something Just Before Save
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
@@ -58,6 +58,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// Custom Method
 userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
@@ -76,6 +77,7 @@ userSchema.methods.generateAccessToken = function () {
     }
   );
 };
+// Generate // This Will Run More Times
 userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
