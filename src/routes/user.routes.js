@@ -3,6 +3,7 @@ import { registerUser } from "../controllers/user.controller.js";
 
 const router = Router();
 
+// Route to handle user registration
 router.route("/register").post(registerUser);
 // router.route("/login").post(login);
 // https::/localhost:8000/user/register

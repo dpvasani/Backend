@@ -24,12 +24,21 @@ import userRouter from "./routes/user.routes.js";
 
 // Routes Declaration
 // app.use("/user", userRouter);
-app.use("/api/v1/users", userRouter);
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
+
+app.listen(process.env.PORT || 4000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 4000}`);
 });
 
-app.get("/test", (req, res) => {
-  res.send("Test route is working!");
-});
+app.use("/api/v1/users", userRouter);
+
+// Testing Purpose
+// app.get("/", (req, res) => {
+//   res.send("Hello, World!");
+// });
+
+// Testing Purpose
+
+// app.get("/test", (req, res) => {
+//   res.send("Test route is working!");
+// });
 export default app;
