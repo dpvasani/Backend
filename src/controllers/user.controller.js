@@ -9,11 +9,14 @@ const registerUser = asyncHandler(async (req, res) => {
   // Validation that not empty
   // Check if User Already Exists : UserName, Email
   // Check For Avatar And Image
-  // Upload Them To Cloudnary
+  // Upload Them To Cloudinary
   // Create User Object - Create Entry In DB
   // Remove Password And Refresh Token From Field Of Response
   //  Check For User Creation
   // Check For Response
+  // Data From Json Or Form We Can Get Directly Through Req.body
+  const { fullName, email, username, password } = req.body;
+  console.log(req.body);
 });
 
 export { registerUser };
