@@ -6,6 +6,8 @@ import { ApiError } from "../utils/ApiError.js";
 const router = Router();
 
 // Route to handle user registration
+// Jate Time Milke Jana
+// Middlewares Has 2 - 3 Syntax
 router.route("/register").post(
   upload.fields([
     {
