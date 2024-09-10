@@ -20,7 +20,8 @@ const registerUser = asyncHandler(async (req, res) => {
   // Check For Response
   // Data From Json Or Form We Can Get Directly Through Req.body
   const { fullName, email, username, password } = req.body;
-  console.log(req.body);
+  console.log("Request Body:", req.body);
+  console.log("Request Files:", req.files);
 
   // Validation
   // In Production Level There Is Separate File For This
@@ -34,7 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(400, "All fields are required");
   }
   // Check If User Name Is Exists
-  const existedUser = User.findOne({
+  const existedUser = await User.findOne({
     $or: [{ email }, { username }],
   });
   if (existedUser) {
@@ -42,8 +43,8 @@ const registerUser = asyncHandler(async (req, res) => {
   }
   // Multer Getting File Local Path
   // console.log(req.files)
-  const AvatarLocalPath = req.files?.avatar[0].path;
-  const CoverImageLocalPath = req.files?.coverImage[0].path;
+  const avatarLocalPath = req.files?.avatar[0]?.path;
+  const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar File Is Required");
   }
@@ -56,10 +57,10 @@ const registerUser = asyncHandler(async (req, res) => {
   // Creating User And Entry In DB
   const user = await User.create({
     fullName,
+    avatar: avatar.url,
     email,
     username: username.toLowerCase(),
     password,
-    avatar: avatar.url,
     coverImage: coverImage?.url || "",
   });
 
