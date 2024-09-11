@@ -4,7 +4,7 @@ import { User } from "../models/user.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
-// Generate Access And Refresh Token
+// Generate Access And Refresh Token Method When You Call This Function You Will Get Access And Refresh Token
 const generateAccessAndRefreshTokens = async (userId) => {
   // Access Token
   try {
@@ -159,9 +159,10 @@ const loginUser = asyncHandler(async (req, res, next) => {
   const loggedInUser = await User.findById(user._id).select(
     "-password -refreshToken"
   );
-  // Sending Cookies
+  // Sending Cookies Options -> Object
   const options = {
-    httpOnly: true,
+    httpOnly: true, // Modified By Server Only
+    // Client Can View
     secure: true,
   };
   // Return Cookie
@@ -170,9 +171,16 @@ const loginUser = asyncHandler(async (req, res, next) => {
     .cookie("accessToken", accessToken, options)
     .cookie("refreshToken", refreshToken, options)
     .json(
-      200,
-      { user: loggedInUser, accessToken, refreshToken },
-      "User Logged In Successfully"
+      new ApiResponse(
+        200,
+        {
+          // So User Can Store Their Data On Local Storage
+          user: loggedInUser,
+          accessToken,
+          refreshToken,
+        },
+        "User Logged In Successfully"
+      )
     );
 });
 
@@ -180,5 +188,25 @@ const logoutUser = asyncHandler(async (req, res) => {
   // Logout User
   // Cookies Clear
   // Access Token And Refresh Token Clear
+  //   req.user._id;
+  await User.findByIdAndUpdate(
+    req.user._id,
+    {
+      $set: {
+        refreshToken: undefined,
+      },
+    },
+    { new: true }
+  );
+  // Clear Cookies
+  const options = {
+    httpOnly: true,
+    secure: true,
+  };
+  return res
+    .status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
+    .json(new ApiResponse(200, {}, "User Logged Out Successfully"));
 });
-export { registerUser, loginUser };
+export { registerUser, loginUser, logoutUser };
