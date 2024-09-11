@@ -4,6 +4,29 @@ import { User } from "../models/user.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
+// Generate Access And Refresh Token
+const generateAccessAndRefreshTokens = async (userId) => {
+  // Access Token
+  try {
+    // Try Thing
+    const user = await User.findId(userId);
+    const accessToken = user.generateAccessToken();
+    const refreshToken = user.generateRefreshToken();
+    // Adding Value To Object
+    user.refreshToken = refreshToken;
+    // Save In DB For That Save Query
+
+    await user.save({ validateBeforeSave: False });
+    // Return Both Token
+    return { accessToken, refreshToken };
+  } catch (error) {
+    throw new ApiError(
+      500,
+      "Something Went Wrong While Generating Access And Refresh Token"
+    );
+  }
+};
+
 const registerUser = asyncHandler(async (req, res) => {
   //   res.status(200).json({
   //     success: true,
@@ -92,4 +115,70 @@ const registerUser = asyncHandler(async (req, res) => {
   );
 });
 
-export { registerUser };
+const loginUser = asyncHandler(async (req, res, next) => {
+  // Login User Logic
+  // Req.body -> Data
+  // Username Or Email
+  // Find The User
+  // Check Password
+  // Access And Refresh Token
+  // Send In Secure Cookies
+
+  // Data From Req.body
+  const { email, username, password } = req.body;
+  if (!email || !username) {
+    throw new ApiError(400, "Email or Username is required");
+  }
+  // Find Username Or Email Whatever Is Exist
+  const user = await User.findOne({
+    $or: [{ username }, { email }],
+  });
+  //  If Both Are Not There Than User Not Exist
+  if (!user) {
+    throw new ApiError(404, "User Not Found Kindly  Register First");
+  }
+  //   await User;   Wrong User Is Object Of Mongoose -> In DB Stored As user
+  // Password Is Matching Or Not
+  // Our Method And MongoDB Function Accessible Through user
+  // Mongoose Methods Are Accessible Through User
+  // User -> Mongoose Ka Object
+  const isPasswordValid = await user.isPasswordCorrect(password);
+  if (!isPasswordValid) {
+    throw new ApiError(401, "Invalid Password");
+  }
+  // Access And Refresh Token Extracting Value From Function
+  // Basically Destructuring And Method Calling
+  // Get Access And Refresh Token From Function Above
+  const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(
+    user._id
+  );
+  // Two Ways Either We Update Old One Object Or One More DB Query
+  // user.refreshToken = refreshToken;
+  // await user.save({ validateBeforeSave: False });
+  // Secure Cookies
+  const loggedInUser = await User.findById(user._id).select(
+    "-password -refreshToken"
+  );
+  // Sending Cookies
+  const options = {
+    httpOnly: true,
+    secure: true,
+  };
+  // Return Cookie
+  return res
+    .status(200)
+    .cookie("accessToken", accessToken, options)
+    .cookie("refreshToken", refreshToken, options)
+    .json(
+      200,
+      { user: loggedInUser, accessToken, refreshToken },
+      "User Logged In Successfully"
+    );
+});
+
+const logoutUser = asyncHandler(async (req, res) => {
+  // Logout User
+  // Cookies Clear
+  // Access Token And Refresh Token Clear
+});
+export { registerUser, loginUser };
