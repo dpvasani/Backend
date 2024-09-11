@@ -9,17 +9,18 @@ const generateAccessAndRefreshTokens = async (userId) => {
   // Access Token
   try {
     // Try Thing
-    const user = await User.findId(userId);
+    const user = await User.findById(userId);
     const accessToken = user.generateAccessToken();
     const refreshToken = user.generateRefreshToken();
     // Adding Value To Object
     user.refreshToken = refreshToken;
     // Save In DB For That Save Query
 
-    await user.save({ validateBeforeSave: False });
+    await user.save({ validateBeforeSave: false });
     // Return Both Token
     return { accessToken, refreshToken };
   } catch (error) {
+    console.error("Error in generateAccessAndRefreshTokens:", error);
     throw new ApiError(
       500,
       "Something Went Wrong While Generating Access And Refresh Token"
@@ -126,7 +127,7 @@ const loginUser = asyncHandler(async (req, res, next) => {
 
   // Data From Req.body
   const { email, username, password } = req.body;
-  if (!email || !username) {
+  if (!(email || username)) {
     throw new ApiError(400, "Email or Username is required");
   }
   // Find Username Or Email Whatever Is Exist
