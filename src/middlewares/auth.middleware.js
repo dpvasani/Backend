@@ -3,37 +3,43 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.model.js";
 import dotenv from "dotenv";
+
+// Load environment variables
 dotenv.config();
 
-export const verifyJWT = asyncHandler(async (req, _, next) => {
+export const verifyJWT = asyncHandler(async (req, res, next) => {
   try {
+    // Extract token from cookies or Authorization header
     const token =
       req.cookies?.accessToken ||
-      req.header("Authorization")?.replace("Bearer ", "");
-    // Replace Bearer Token With Empty String So Basically Trim To Token
+      req.header("Authorization")?.replace(/^Bearer\s+/, "");
 
-    // console.log(token);
+    // Check if token is missing
     if (!token) {
-      // No Token -> No Login
-      throw new ApiError(401, "Unauthorized request");
+      throw new ApiError(401, "Unauthorized request: Token not provided");
     }
-    // Decode Token -> Verification
+
+    // Verify and decode the token
     const decodedToken = jwt.verify(
       token,
-      ` ${process.env.ACCESS_TOKEN_SECRET}`
+      `${process.env.ACCESS_TOKEN_SECRET}`.trim()
     );
 
+    // Fetch user from database using decoded token's user ID
     const user = await User.findById(decodedToken?._id).select(
       "-password -refreshToken"
     );
 
+    // If user not found
     if (!user) {
-      throw new ApiError(401, "Invalid Access Token");
+      throw new ApiError(401, "Invalid Access Token: User not found");
     }
 
+    // Attach user to the request object
     req.user = user;
     next();
   } catch (error) {
-    throw new ApiError(401, error?.message || "Invalid Access Token");
+    // Handle invalid token or verification failure
+    next(new ApiError(401, error.message || "Invalid Access Token"));
   }
 });
