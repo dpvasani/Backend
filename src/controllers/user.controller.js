@@ -467,6 +467,8 @@ const getWatchHistory = asyncHandler(async (req, res) => {
   const user = await User.aggregate([
     {
       $match: {
+        // Aggregation Pipeline Code Directly Goes
+        // User Mil Gaya
         _id: new mongoose.Types.ObjectId(req.user._id),
       },
     },
@@ -512,7 +514,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
       new ApiResponse(
         200,
         user[0].watchHistory,
-        "Watch history fetched successfully"
+        "Watch History Fetched Successfully"
       )
     );
 });
