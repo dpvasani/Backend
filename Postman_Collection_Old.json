@@ -1,0 +1,691 @@
+{
+  "info": {
+    "_postman_id": "a984910e-8eda-4f37-b49f-ca1fd05b6665",
+    "name": "Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "31779821"
+  },
+  "item": [
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "fullName",
+                  "value": "three",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "three@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "123",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "three",
+                  "type": "text"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "src": "/D:/downlaod/6.png"
+                },
+                {
+                  "key": "coverImage",
+                  "type": "file",
+                  "src": "/D:/downlaod/BLDT Block.drawio (1).png"
+                }
+              ]
+            },
+            "url": "{{server}}/users/register"
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"three@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/users/login"
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/users/logout"
+          },
+          "response": []
+        },
+        {
+          "name": "getUserChannelProfile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": "{{server}}/users/channel/two"
+          },
+          "response": []
+        },
+        {
+          "name": "refreshAccessToken",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "oldPassword",
+                "value": "123",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "newPassword",
+                "value": "1234",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": "{{server}}/users/refresh-token"
+          },
+          "response": []
+        },
+        {
+          "name": "getCurrentUser",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/users/current-user"
+          },
+          "response": []
+        },
+        {
+          "name": "upadteUserCoverImage",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "coverImage",
+                  "type": "file",
+                  "src": "/C:/Users/91816/OneDrive/Desktop/New folder (2)/Untitled.jpeg"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "src": "/D:/downlaod/BLDT.drawio.png",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": "{{server}}/users/cover-image"
+          },
+          "response": []
+        },
+        {
+          "name": "updateUserAvatar",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "src": "/D:/downlaod/0000f77c-62c2a288_jpg.rf.234b4b0219fe6eae02cef8ec7b1c231b.jpg"
+                }
+              ]
+            },
+            "url": "{{server}}/users/avatar"
+          },
+          "response": []
+        },
+        {
+          "name": "changeCurrentPassword",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "oldPassword",
+                  "value": "123",
+                  "type": "text"
+                },
+                {
+                  "key": "newPassword",
+                  "value": "1234",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{server}}/users/change-password"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "video",
+      "item": [
+        {
+          "name": "publishAVideo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "14",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "14",
+                  "type": "text"
+                },
+                {
+                  "key": "videoFile",
+                  "type": "file",
+                  "src": "/D:/downlaod/download.mp4"
+                },
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "src": "/D:/downlaod/5.png"
+                }
+              ]
+            },
+            "url": "{{server}}/video/publish-video"
+          },
+          "response": []
+        },
+        {
+          "name": "getVideoById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/video/get-video/66c5a9ac801a5257171d7361"
+          },
+          "response": []
+        },
+        {
+          "name": "updateVideo",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "src": "/C:/Users/91816/OneDrive/Pictures/croped/Screenshot (2823).png"
+                },
+                {
+                  "key": "title",
+                  "value": "aksjdnaljsnd",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "lksndlaksnflkn",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{server}}/video/update-video/66c5a9ac801a5257171d7361"
+          },
+          "response": []
+        },
+        {
+          "name": "deleteVideo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{server}}/video/delete-video/66c5a9ac801a5257171d7361"
+          },
+          "response": []
+        },
+        {
+          "name": "togglePublishStatus",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{server}}video/toggle/66c5a98f132f51a0cce2ebf9"
+          },
+          "response": []
+        },
+        {
+          "name": "getAllVideos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/video/all-video?userId=66b898d7c6bf68f69791fb8d&query=11",
+              "host": ["{{server}}"],
+              "path": ["video", "all-video"],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "66b898d7c6bf68f69791fb8d"
+                },
+                {
+                  "key": "query",
+                  "value": "11"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "subscription",
+      "item": [
+        {
+          "name": "toggleSubscription",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{server}}/subs/subscribe/66b898d7c6bf68f69791fb8d"
+          },
+          "response": []
+        },
+        {
+          "name": "getUserChannelSubscribers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/subs/subofchan/66b898d7c6bf68f69791fb8d"
+          },
+          "response": []
+        },
+        {
+          "name": "getSubscribedChannels ",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/subs/chansub/66b898d7c6bf68f69791fb8d"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "item": [
+        {
+          "name": "addComment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"akjslbfnkl;naosnd\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/comment/66c5a98f132f51a0cce2ebf9"
+          },
+          "response": []
+        },
+        {
+          "name": "deleteComment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "http://localhost:8000/api/v1/comment/c/66c9bbede25af2bf89f02af7"
+          },
+          "response": []
+        },
+        {
+          "name": "updateComment",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"12345678\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/comment/c/66c9d37d23695311a55ad537"
+          },
+          "response": []
+        },
+        {
+          "name": "getVideoComments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/comment/66c5a98f132f51a0cce2ebf9?page=2",
+              "host": ["{{server}}"],
+              "path": ["comment", "66c5a98f132f51a0cce2ebf9"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "getChannelVideos",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"channelID\": \"66c369d65d832ac5d048dd05\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/dashboard/videos"
+          },
+          "response": []
+        },
+        {
+          "name": "getChannelStats",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"channel\": \"two\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/dashboard/channel-stats",
+              "host": ["{{server}}"],
+              "path": ["dashboard", "channel-stats"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "like",
+      "item": [
+        {
+          "name": "toggleVideoLike",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{server}}/like/toggle/v/66c9bbede25af2bf89f02af7"
+          },
+          "response": []
+        },
+        {
+          "name": "toggleCommentLike",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{server}}/like/toggle/c/66c9bbede25af2bf89f02af7"
+          },
+          "response": []
+        },
+        {
+          "name": "toggleTweetLike",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{server}}/like/toggle/t/66c9bbede25af2bf89f02af7"
+          },
+          "response": []
+        },
+        {
+          "name": "getLikedVideos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/like/videos"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "tweet",
+      "item": [
+        {
+          "name": "createTweet",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"HEllo World!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/tweet"
+          },
+          "response": []
+        },
+        {
+          "name": "getUserTweets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/tweet/user/66c369d65d832ac5d048dd05"
+          },
+          "response": []
+        },
+        {
+          "name": "deleteTweet",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{server}}/tweet/66cc74b20e9c54f2df124da5"
+          },
+          "response": []
+        },
+        {
+          "name": "updateTweet",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"content\": \"assHole\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/tweet/66cc74b10e9c54f2df124da2"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "playlist",
+      "item": [
+        {
+          "name": "createPlaylist",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"name\",\r\n    \"description\": \"description\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/playlist/"
+          },
+          "response": []
+        },
+        {
+          "name": "getUserPlaylists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/playlist/user/66cda6c293a520c01b34ba8a"
+          },
+          "response": []
+        },
+        {
+          "name": "getPlaylistById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/playlist/66cda5f90fd8cba23a331fb3"
+          },
+          "response": []
+        },
+        {
+          "name": "addVideoToPlaylist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{server}}/playlist/add/66cdb4af8f09e8736fa6d44e/66c5a98f132f51a0cce2ebf9"
+          },
+          "response": []
+        },
+        {
+          "name": "removeVideoFromPlaylist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{server}}/playlist/remove/66cdb4af8f09e8736fa6d44e/66c5a98f132f51a0cce2ebf9"
+          },
+          "response": []
+        },
+        {
+          "name": "deletePlaylist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{server}}/playlist/66cdb4af8f09e8736fa6d44e"
+          },
+          "response": []
+        },
+        {
+          "name": "updatePlaylist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"asd\",\r\n    \"description\": \"aljsbfouab\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{server}}/playlist/66cdcda83bce67fdad477d4c"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "healthcheck",
+      "item": [
+        {
+          "name": "{{server}}/healthcheck",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{server}}/healthcheck"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
