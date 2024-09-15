@@ -28,7 +28,7 @@ This project is a **YouTube + Twitter** backend that integrates YouTube-like fun
 - Uploading and publishing videos
 - Video search, sorting, and pagination
 - Video editing and deletion
-- Control over video visibility (publish/unpublish)
+- Control over video visibility (publish/un publish)
 
 ### Tweet Management
 
@@ -83,7 +83,7 @@ This project is a **YouTube + Twitter** backend that integrates YouTube-like fun
 2. **Install dependencies:**
 
    ```bash
-   cd youtube-twitter
+   cd backend
    npm install
    ```
 
