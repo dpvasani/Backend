@@ -83,7 +83,7 @@ This project is a **YouTube + Twitter** backend that integrates YouTube-like fun
 2. **Install dependencies:**
 
    ```bash
-   cd backend
+   cd Backend
    npm install
    ```
 
