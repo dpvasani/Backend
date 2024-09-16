@@ -1,0 +1,4150 @@
+{
+	"info": {
+		"_postman_id": "b1d74f4d-6785-46a2-8d20-83f1c276b1e8",
+		"name": "YouTube + Twitter",
+		"description": "This is a `YOUTUBE + TWITTER` backend project that covers allmost the functionalities of youtube and also combines the tweet functionality from twitter into it. Find more about his project in the documentaion below.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26810555"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Chai",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "chaiaurcode@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "ChaiAurCode",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "chai123",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "postman-cloud:///1ef6ee5c-4eba-4b40-ac6d-319bb4ebf175"
+								},
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1ef6ecb6-ae0d-4270-8c23-abdca41661d6",
+										"/C:/Users/HRUTHIK KS/Downloads/wallpapers/677670.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						},
+						"description": "Register a new user account."
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "Chai",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "chaiaurcode@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "fullName",
+											"value": "ChaiAurCode",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "chai123",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/Downloads/wallpapers/64470065adf2a60a31bcbbdf_space-men.png"
+										},
+										{
+											"key": "coverImage",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/Downloads/wallpapers/677670.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "647"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"287-GExsbXbdefpozgmTFgCMgFiNqL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:50:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a2248a634e2db8fd832db1\",\n        \"username\": \"chai\",\n        \"email\": \"chaiaurcode@gmail.com\",\n        \"fullName\": \"ChaiAurCode\",\n        \"avatar\": {\n            \"public_id\": \"gtqnxpus2lldxebauvgf\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125000/gtqnxpus2lldxebauvgf.png\",\n            \"_id\": \"65a2248a634e2db8fd832db2\"\n        },\n        \"coverImage\": {\n            \"public_id\": \"njmxikuf6vibqr5xhtur\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125002/njmxikuf6vibqr5xhtur.jpg\",\n            \"_id\": \"65a2248a634e2db8fd832db3\"\n        },\n        \"watchHistory\": [],\n        \"createdAt\": \"2024-01-13T05:50:02.974Z\",\n        \"updatedAt\": \"2024-01-13T05:50:02.974Z\",\n        \"__v\": 0\n    },\n    \"message\": \"user registered successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"username\": \"chai\",\r\n      \"email\": \"chaiaurcode@gmail.com\",\r\n      \"password\":\"chai123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						},
+						"description": "Login with existing credentials."
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "chaiaurcode@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "chai123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJlbWFpbCI6ImNoYWlhdXJjb2RlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhaSIsImZ1bGxOYW1lIjoiQ2hhaUF1ckNvZGUiLCJpYXQiOjE3MDUxMjUwNTYsImV4cCI6MTcwNTIxMTQ1Nn0.V3g5alek9T0KKQ_FMdWxqyGPXfI_-ufviHnsYH6KJDw; Path=/; HttpOnly; Secure"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJpYXQiOjE3MDUxMjUwNTYsImV4cCI6MTcwNTk4OTA1Nn0.w7hp9L0yVCKqU5LK6_Vh9Yj7AjH0heuU4Sw9m2ja7Rw; Path=/; HttpOnly; Secure"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"473-+6Q6isZ9+mYZ4jCGfrXfIiJKthg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:50:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"user\": {\n            \"_id\": \"65a2248a634e2db8fd832db1\",\n            \"username\": \"chai\",\n            \"email\": \"chaiaurcode@gmail.com\",\n            \"fullName\": \"ChaiAurCode\",\n            \"avatar\": {\n                \"public_id\": \"gtqnxpus2lldxebauvgf\",\n                \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125000/gtqnxpus2lldxebauvgf.png\",\n                \"_id\": \"65a2248a634e2db8fd832db2\"\n            },\n            \"coverImage\": {\n                \"public_id\": \"njmxikuf6vibqr5xhtur\",\n                \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125002/njmxikuf6vibqr5xhtur.jpg\",\n                \"_id\": \"65a2248a634e2db8fd832db3\"\n            },\n            \"watchHistory\": [],\n            \"createdAt\": \"2024-01-13T05:50:02.974Z\",\n            \"updatedAt\": \"2024-01-13T05:50:56.593Z\",\n            \"__v\": 0\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJlbWFpbCI6ImNoYWlhdXJjb2RlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhaSIsImZ1bGxOYW1lIjoiQ2hhaUF1ckNvZGUiLCJpYXQiOjE3MDUxMjUwNTYsImV4cCI6MTcwNTIxMTQ1Nn0.V3g5alek9T0KKQ_FMdWxqyGPXfI_-ufviHnsYH6KJDw\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJpYXQiOjE3MDUxMjUwNTYsImV4cCI6MTcwNTk4OTA1Nn0.w7hp9L0yVCKqU5LK6_Vh9Yj7AjH0heuU4Sw9m2ja7Rw\"\n    },\n    \"message\": \"User logged in successfully !!!.\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						},
+						"description": "Logout the currently logged-in user."
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-yw0aInGpEaqli7dByqS2zrEiF5s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:51:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {},\n    \"message\": \"User logout successfull !!!.\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/refresh-token",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"refresh-token"
+							]
+						},
+						"description": "Refresh the expired access token."
+					},
+					"response": [
+						{
+							"name": "refresh-token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/refresh-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJlbWFpbCI6ImNoYWlhdXJjb2RlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhaSIsImZ1bGxOYW1lIjoiQ2hhaUF1ckNvZGUiLCJpYXQiOjE3MDUxMjUxMTMsImV4cCI6MTcwNTIxMTUxM30.5IjUWvB1ceeqJ1F0PPknybicIjzKDalxjqxkppzyMTQ; Path=/; HttpOnly; Secure"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJpYXQiOjE3MDUxMjUxMTMsImV4cCI6MTcwNTk4OTExM30.C1uxSMS8zUjkCcPqTjNehoHAhXEUQG8zF11Qxz-VdOQ; Path=/; HttpOnly; Secure"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "556"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22c-CeIIYJH1V3E2RNv+spapnyniKgU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:51:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJlbWFpbCI6ImNoYWlhdXJjb2RlQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhaSIsImZ1bGxOYW1lIjoiQ2hhaUF1ckNvZGUiLCJpYXQiOjE3MDUxMjUxMTMsImV4cCI6MTcwNTIxMTUxM30.5IjUWvB1ceeqJ1F0PPknybicIjzKDalxjqxkppzyMTQ\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJpYXQiOjE3MDUxMjUxMTMsImV4cCI6MTcwNTk4OTExM30.C1uxSMS8zUjkCcPqTjNehoHAhXEUQG8zF11Qxz-VdOQ\"\n    },\n    \"message\": \"Access token refreshed\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"chai123\",\r\n    \"newPassword\":\"chai1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/change-password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"change-password"
+							]
+						},
+						"description": "Change the current user's password."
+					},
+					"response": [
+						{
+							"name": "change-password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "oldPassword",
+											"value": "chai123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "chai1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/change-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-SiOcVJRH4b8/IfaBpgK3pineRhc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:52:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {},\n    \"message\": \"Password updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "current-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/current-user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"current-user"
+							]
+						},
+						"description": "Get information about the currently logged-in user."
+					},
+					"response": [
+						{
+							"name": "current-user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/current-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"current-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "652"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28c-7gcWhyi8RTUSY3V9ryUZhgL8BqM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:52:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a2248a634e2db8fd832db1\",\n        \"username\": \"chai\",\n        \"email\": \"chaiaurcode@gmail.com\",\n        \"fullName\": \"ChaiAurCode\",\n        \"avatar\": {\n            \"public_id\": \"gtqnxpus2lldxebauvgf\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125000/gtqnxpus2lldxebauvgf.png\",\n            \"_id\": \"65a2248a634e2db8fd832db2\"\n        },\n        \"coverImage\": {\n            \"public_id\": \"njmxikuf6vibqr5xhtur\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125002/njmxikuf6vibqr5xhtur.jpg\",\n            \"_id\": \"65a2248a634e2db8fd832db3\"\n        },\n        \"watchHistory\": [],\n        \"createdAt\": \"2024-01-13T05:50:02.974Z\",\n        \"updatedAt\": \"2024-01-13T05:52:20.131Z\",\n        \"__v\": 0\n    },\n    \"message\": \"current user fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "chaiaurcode",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "chaiaurcode@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/update-user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"update-user"
+							]
+						},
+						"description": "Update user details (name, email, etc.)."
+					},
+					"response": [
+						{
+							"name": "update-user",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullName",
+											"value": "chaiaurcode",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "chaiaurcode@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/update-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"update-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "655"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28f-vk8pQdgNBGyWy15xmc7zEQYF0dw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:54:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a2248a634e2db8fd832db1\",\n        \"username\": \"chai\",\n        \"email\": \"chaiaurcode@gmail.com\",\n        \"fullName\": \"chaiaurcode\",\n        \"avatar\": {\n            \"public_id\": \"gtqnxpus2lldxebauvgf\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125000/gtqnxpus2lldxebauvgf.png\",\n            \"_id\": \"65a2248a634e2db8fd832db2\"\n        },\n        \"coverImage\": {\n            \"public_id\": \"njmxikuf6vibqr5xhtur\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125002/njmxikuf6vibqr5xhtur.jpg\",\n            \"_id\": \"65a2248a634e2db8fd832db3\"\n        },\n        \"watchHistory\": [],\n        \"createdAt\": \"2024-01-13T05:50:02.974Z\",\n        \"updatedAt\": \"2024-01-13T05:54:42.873Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Account details updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "update-avatar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/HRUTHIK KS/Downloads/wallpapers/wallpaperbetter.com_7680x4320 (1).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/update-avatar",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"update-avatar"
+							]
+						},
+						"description": "Update user avatar image."
+					},
+					"response": [
+						{
+							"name": "update-avatar",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/Downloads/wallpapers/wallpaperbetter.com_7680x4320 (1).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/update-avatar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"update-avatar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"342-82BM18faNo1Z5Zt6l4RdP56zC2k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 05:55:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a2248a634e2db8fd832db1\",\n        \"username\": \"chai\",\n        \"email\": \"chaiaurcode@gmail.com\",\n        \"fullName\": \"chaiaurcode\",\n        \"avatar\": {\n            \"public_id\": \"nqapndmrm3onmwuke1br\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125315/nqapndmrm3onmwuke1br.jpg\",\n            \"_id\": \"65a225c4634e2db8fd832dcc\"\n        },\n        \"coverImage\": {\n            \"public_id\": \"njmxikuf6vibqr5xhtur\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125002/njmxikuf6vibqr5xhtur.jpg\",\n            \"_id\": \"65a2248a634e2db8fd832db3\"\n        },\n        \"watchHistory\": [],\n        \"createdAt\": \"2024-01-13T05:50:02.974Z\",\n        \"updatedAt\": \"2024-01-13T05:55:16.926Z\",\n        \"__v\": 0,\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJpYXQiOjE3MDUxMjUxMTMsImV4cCI6MTcwNTk4OTExM30.C1uxSMS8zUjkCcPqTjNehoHAhXEUQG8zF11Qxz-VdOQ\"\n    },\n    \"message\": \"Avatar update successfull\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "update-coverImage",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coverImage",
+									"type": "file",
+									"src": "/C:/Users/HRUTHIK KS/Downloads/wallpapers/wp6177686-samurai-4k-wallpapers.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/users/update-coverImg",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"update-coverImg"
+							]
+						},
+						"description": "Update user cover image."
+					},
+					"response": [
+						{
+							"name": "update-coverImage",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "coverImage",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/Downloads/wallpapers/wp6177686-samurai-4k-wallpapers.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/update-coverImg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"update-coverImg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "838"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"346-HJhhjUcicSH6dZxbFglaX+5kXBs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 06:02:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a2248a634e2db8fd832db1\",\n        \"username\": \"chai\",\n        \"email\": \"chaiaurcode@gmail.com\",\n        \"fullName\": \"chaiaurcode\",\n        \"avatar\": {\n            \"public_id\": \"nqapndmrm3onmwuke1br\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125315/nqapndmrm3onmwuke1br.jpg\",\n            \"_id\": \"65a225c4634e2db8fd832dcc\"\n        },\n        \"coverImage\": {\n            \"public_id\": \"noh7bxw6qiyxqwgu1yri\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125766/noh7bxw6qiyxqwgu1yri.jpg\",\n            \"_id\": \"65a2278767b7f23abe88c018\"\n        },\n        \"watchHistory\": [],\n        \"createdAt\": \"2024-01-13T05:50:02.974Z\",\n        \"updatedAt\": \"2024-01-13T06:02:47.134Z\",\n        \"__v\": 0,\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWEyMjQ4YTYzNGUyZGI4ZmQ4MzJkYjEiLCJpYXQiOjE3MDUxMjUxMTMsImV4cCI6MTcwNTk4OTExM30.C1uxSMS8zUjkCcPqTjNehoHAhXEUQG8zF11Qxz-VdOQ\"\n    },\n    \"message\": \"coverImage update successfull\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "watch-history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/watch-history",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"watch-history"
+							]
+						},
+						"description": "Get the current user's watch history."
+					},
+					"response": [
+						{
+							"name": "watch-history",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/users/watch-history",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"watch-history"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"468-UR5eyZulb40m0T2GM/zJbR8R+CU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:09:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"65a1f445dc8b8a211ae80b13\",\n            \"videoFile\": {\n                \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705112641/lgqhd7lg4bhl4w5ckfa4.mp4\",\n                \"public_id\": \"lgqhd7lg4bhl4w5ckfa4\",\n                \"_id\": \"65a1f445dc8b8a211ae80b14\"\n            },\n            \"thumbnail\": {\n                \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705112737/ocdaqz4vk48jglyjdbxu.png\",\n                \"public_id\": \"ocdaqz4vk48jglyjdbxu\",\n                \"_id\": \"65a1f4a2dc8b8a211ae80b1a\"\n            },\n            \"owner\": {\n                \"_id\": \"659ea90de661aab623b18f62\",\n                \"username\": \"spiderman\",\n                \"fullName\": \"marvel spiderman\",\n                \"avatar\": {\n                    \"public_id\": \"ct0koeupddumzhaj4koc\",\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704896778/ct0koeupddumzhaj4koc.png\",\n                    \"_id\": \"659ea90de661aab623b18f63\"\n                }\n            },\n            \"title\": \"Suzume intro scene.\",\n            \"description\": \"Suzume is not only one of the best films of 2023 it is one of the greatest animation films of all time. This is a film that is guaranteed to be classed as one of the most visually stunning films of all time\",\n            \"duration\": 13,\n            \"createdAt\": \"2024-01-13T02:24:05.617Z\",\n            \"updatedAt\": \"2024-01-13T09:38:03.267Z\",\n            \"__v\": 0,\n            \"isPublished\": true,\n            \"views\": 6\n        }\n    ],\n    \"message\": \"Watch history fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "UserChannelProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/users/c/hruthik28",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"c",
+								"hruthik28"
+							]
+						},
+						"description": "Get user channel profile information."
+					},
+					"response": [
+						{
+							"name": "UserChannelProfile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/users/c/hruthik28",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"users",
+										"c",
+										"hruthik28"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "592"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"250-uDD/wGnWGT9/ROON703IvcUYXSA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:09:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"658ae0487b4f8ee443020604\",\n        \"email\": \"hruthik@gmail.com\",\n        \"fullName\": \"Hruthik\",\n        \"avatar\": {\n            \"public_id\": \"bboqn6owxzvkwvp7hpqq\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693563/bboqn6owxzvkwvp7hpqq.png\",\n            \"_id\": \"658c4cfc8a5e6d6942972c1e\"\n        },\n        \"coverImage\": {\n            \"public_id\": \"ztdzbi3la03f6whwrxqp\",\n            \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693591/ztdzbi3la03f6whwrxqp.jpg\",\n            \"_id\": \"658c4d188a5e6d6942972c22\"\n        },\n        \"subcribersCount\": 2,\n        \"channelsSubscribedToCount\": 5,\n        \"isSubscribed\": false\n    },\n    \"message\": \"User channel fetced successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "#### user Endpoints"
+		},
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "publishAvideo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Bleach episode 7 intro scene(HEAT OF BATTLE)",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Heat of battle full bgm + intro orchestral version",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "videoFile",
+									"type": "file",
+									"src": "/C:/Users/HRUTHIK KS/Downloads/BleachE7Intro (1).mp4"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/HRUTHIK KS/OneDrive/Pictures/Screenshots/Screenshot 2024-01-13 122950.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/video",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"video"
+							]
+						},
+						"description": "Publish a new video."
+					},
+					"response": [
+						{
+							"name": "pushVideo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Bleach episode 7 intro scene(HEAT OF BATTLE)",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Heat of battle full bgm + intro orchestral version",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "videoFile",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/Downloads/BleachE7Intro (1).mp4"
+										},
+										{
+											"key": "thumbnail",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/OneDrive/Pictures/Screenshots/Screenshot 2024-01-13 122950.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/video",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"video"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "751"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ef-TirSbJBew8m9Dec4uGGxofglhOU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:07:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"videoFile\": {\n            \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705136824/kf6ndz8zw5ck1wwihfaa.mp4\",\n            \"public_id\": \"kf6ndz8zw5ck1wwihfaa\",\n            \"_id\": \"65a252bd3a3eca4bf457c163\"\n        },\n        \"thumbnail\": {\n            \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705136828/gbqgmjs1ejdilehlnxqz.png\",\n            \"public_id\": \"gbqgmjs1ejdilehlnxqz\",\n            \"_id\": \"65a252bd3a3eca4bf457c164\"\n        },\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"title\": \"Bleach episode 7 intro scene(HEAT OF BATTLE)\",\n        \"description\": \"Heat of battle full bgm + intro orchestral version\",\n        \"duration\": 124.110998,\n        \"isPublished\": true,\n        \"_id\": \"65a252bd3a3eca4bf457c162\",\n        \"createdAt\": \"2024-01-13T09:07:09.718Z\",\n        \"updatedAt\": \"2024-01-13T09:07:09.718Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Video uploaded successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "updateAVideo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Bleach episode 7 intro scene(HEAT OF BATTLE)",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Heat of battle full bgm + intro orchestral version",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/HRUTHIK KS/OneDrive/Pictures/Screenshots/Screenshot 2024-01-13 122950.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/video/v/65a252bd3a3eca4bf457c162",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"video",
+								"v",
+								"65a252bd3a3eca4bf457c162"
+							]
+						},
+						"description": "Update video details (title, description, thumbnail)."
+					},
+					"response": [
+						{
+							"name": "updateVideo",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Bleach episode 7 intro scene(HEAT OF BATTLE)",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Heat of battle full bgm + intro orchestral version",
+											"type": "text"
+										},
+										{
+											"key": "thumbnail",
+											"type": "file",
+											"src": "/C:/Users/HRUTHIK KS/OneDrive/Pictures/Screenshots/Screenshot 2024-01-13 122950.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/video/v/65a252bd3a3eca4bf457c162",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"video",
+										"v",
+										"65a252bd3a3eca4bf457c162"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "750"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ee-AGgjefT3hCp2zqH4/XQ5k1x4RIo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:13:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a252bd3a3eca4bf457c162\",\n        \"videoFile\": {\n            \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705136824/kf6ndz8zw5ck1wwihfaa.mp4\",\n            \"public_id\": \"kf6ndz8zw5ck1wwihfaa\",\n            \"_id\": \"65a252bd3a3eca4bf457c163\"\n        },\n        \"thumbnail\": {\n            \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705137212/xhaxhrqkjl5eh2ebtw52.png\",\n            \"public_id\": \"xhaxhrqkjl5eh2ebtw52\",\n            \"_id\": \"65a2543d3a3eca4bf457c16c\"\n        },\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"title\": \"Bleach episode 7 intro scene(HEAT OF BATTLE)\",\n        \"description\": \"Heat of battle full bgm + intro orchestral version\",\n        \"duration\": 124.110998,\n        \"isPublished\": true,\n        \"createdAt\": \"2024-01-13T09:07:09.718Z\",\n        \"updatedAt\": \"2024-01-13T09:13:33.272Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Video updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteAVideo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/video/v/65a258d6cbfbed2ee3918ccf",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"video",
+								"v",
+								"65a258d6cbfbed2ee3918ccf"
+							]
+						},
+						"description": "Delete a video."
+					},
+					"response": [
+						{
+							"name": "deleteVideo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/video/v/65a258d6cbfbed2ee3918ccf",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"video",
+										"v",
+										"65a258d6cbfbed2ee3918ccf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-aIqT41zk93vuX7K7v7eBiK2PSt8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:33:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {},\n    \"message\": \"Video deleted successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/video/?sortBy=createdAt&sortType=asc&query=Bleach suzume sukuna",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"video",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "659ea90de661aab623b18f62",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sortType",
+									"value": "asc"
+								},
+								{
+									"key": "query",
+									"value": "Bleach suzume sukuna"
+								}
+							]
+						},
+						"description": "Get all videos based on filters (query, sort, pagination)."
+					},
+					"response": [
+						{
+							"name": "getAllVideos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/video/?userId=659ea90de661aab623b18f62&sortBy=createdAt&sortType=asc&query=Bleach suzume sukuna",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"video",
+										""
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "659ea90de661aab623b18f62"
+										},
+										{
+											"key": "sortBy",
+											"value": "createdAt"
+										},
+										{
+											"key": "sortType",
+											"value": "asc"
+										},
+										{
+											"key": "query",
+											"value": "Bleach suzume sukuna"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1647"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"66f-6sn3U2i2PbeRiDq5t6sbArjOr2k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:36:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"docs\": [\n            {\n                \"_id\": \"65a1f445dc8b8a211ae80b13\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705112641/lgqhd7lg4bhl4w5ckfa4.mp4\",\n                    \"public_id\": \"lgqhd7lg4bhl4w5ckfa4\",\n                    \"_id\": \"65a1f445dc8b8a211ae80b14\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705112737/ocdaqz4vk48jglyjdbxu.png\",\n                    \"public_id\": \"ocdaqz4vk48jglyjdbxu\",\n                    \"_id\": \"65a1f4a2dc8b8a211ae80b1a\"\n                },\n                \"owner\": \"659ea90de661aab623b18f62\",\n                \"title\": \"Suzume intro scene.\",\n                \"description\": \"Suzume is not only one of the best films of 2023 it is one of the greatest animation films of all time. This is a film that is guaranteed to be classed as one of the most visually stunning films of all time\",\n                \"duration\": 13,\n                \"createdAt\": \"2024-01-13T02:24:05.617Z\",\n                \"updatedAt\": \"2024-01-13T03:27:13.815Z\",\n                \"__v\": 0,\n                \"isPublished\": true,\n                \"views\": 4\n            },\n            {\n                \"_id\": \"65a1f6f2c1a21854670faad4\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705113325/roaplxoz8jehdkobl1vk.mp4\",\n                    \"public_id\": \"roaplxoz8jehdkobl1vk\",\n                    \"_id\": \"65a1f6f2c1a21854670faad5\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705113330/wvfg5ovmbsj72ppcr6re.png\",\n                    \"public_id\": \"wvfg5ovmbsj72ppcr6re\",\n                    \"_id\": \"65a1f6f2c1a21854670faad6\"\n                },\n                \"owner\": \"659ea90de661aab623b18f62\",\n                \"title\": \"Sukuna vs Jogo\",\n                \"description\": \"Sukuna killa jogo S2E16\",\n                \"duration\": 20.228542,\n                \"createdAt\": \"2024-01-13T02:35:30.864Z\",\n                \"updatedAt\": \"2024-01-13T02:37:34.106Z\",\n                \"__v\": 0,\n                \"isPublished\": true\n            }\n        ],\n        \"totalDocs\": 2,\n        \"limit\": 10,\n        \"page\": 1,\n        \"totalPages\": 1,\n        \"pagingCounter\": 1,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": false,\n        \"prevPage\": null,\n        \"nextPage\": null\n    },\n    \"message\": \"Videos fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getVideoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/video/v/65a25a7b7a5f7558085a10f0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"video",
+								"v",
+								"65a25a7b7a5f7558085a10f0"
+							]
+						},
+						"description": "Get detailed information about a specific video."
+					},
+					"response": [
+						{
+							"name": "getVideoById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/video/v/65a1f445dc8b8a211ae80b13",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"video",
+										"v",
+										"65a1f445dc8b8a211ae80b13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "791"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"317-Kz0Dksl2JgX3yrgiyXzVk+3jCGU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:38:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a1f445dc8b8a211ae80b13\",\n        \"videoFile\": {\n            \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705112641/lgqhd7lg4bhl4w5ckfa4.mp4\"\n        },\n        \"owner\": {\n            \"_id\": \"659ea90de661aab623b18f62\",\n            \"username\": \"spiderman\",\n            \"avatar\": {\n                \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704896778/ct0koeupddumzhaj4koc.png\"\n            },\n            \"subscribersCount\": 2,\n            \"isSubscribed\": false\n        },\n        \"title\": \"Suzume intro scene.\",\n        \"description\": \"Suzume is not only one of the best films of 2023 it is one of the greatest animation films of all time. This is a film that is guaranteed to be classed as one of the most visually stunning films of all time\",\n        \"duration\": 13,\n        \"createdAt\": \"2024-01-13T02:24:05.617Z\",\n        \"views\": 5,\n        \"likesCount\": 3,\n        \"isLiked\": false\n    },\n    \"message\": \"video details fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "togglePublishStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/video/toggle/publish/65a25a7b7a5f7558085a10f0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"video",
+								"toggle",
+								"publish",
+								"65a25a7b7a5f7558085a10f0"
+							]
+						},
+						"description": "Toggle the published status of a video."
+					},
+					"response": [
+						{
+							"name": "togglePublishStatus",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/video/toggle/publish/65a25a7b7a5f7558085a10f0",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"video",
+										"toggle",
+										"publish",
+										"65a25a7b7a5f7558085a10f0"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-oKkpHFZ6raWNnaB0XDU1tf74tww\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:41:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"isPublished\": false\n    },\n    \"message\": \"Video publish toggled successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "Video Endpoints"
+		},
+		{
+			"name": "like",
+			"item": [
+				{
+					"name": "toggle-video-like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/likes/toggle/v/65a1f445dc8b8a211ae80b13",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"likes",
+								"toggle",
+								"v",
+								"65a1f445dc8b8a211ae80b13"
+							]
+						},
+						"description": "Toggle like for a video."
+					},
+					"response": [
+						{
+							"name": "like-video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/toggle/v/65a1f6f2c1a21854670faad4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"toggle",
+										"v",
+										"65a1f6f2c1a21854670faad4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-S6VTBFHx0nSB/GFdMdsMvfmdu6I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:41:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": \"liked video successfully\",\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "unlike-video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/toggle/v/65a1f6f2c1a21854670faad4",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"toggle",
+										"v",
+										"65a1f6f2c1a21854670faad4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-Hmx7h2gwakq5+zQDkTz5TyZs2m8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:42:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": \"unliked video successfully\",\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "toggle-tweet-like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/likes/toggle/t/65a1f7f0c1a21854670faaf8",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"likes",
+								"toggle",
+								"t",
+								"65a1f7f0c1a21854670faaf8"
+							]
+						},
+						"description": "Toggle like for a tweet."
+					},
+					"response": [
+						{
+							"name": "like-tweet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/toggle/t/65a1f7f0c1a21854670faaf8",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"toggle",
+										"t",
+										"65a1f7f0c1a21854670faaf8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-nb637WCzj7fmR5fzfQXUXW3Kpa4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:41:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": \"liked tweet successfully\",\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "unlike-tweet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/toggle/t/65a1f7f0c1a21854670faaf8",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"toggle",
+										"t",
+										"65a1f7f0c1a21854670faaf8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-c535Zi0ruENHyv01rHEPhI4u7P0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:42:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": \"unliked tweet successfully\",\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "toggle-comment-like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/likes/toggle/c/65a1fd2994477c7a8e67ea83",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"likes",
+								"toggle",
+								"c",
+								"65a1fd2994477c7a8e67ea83"
+							]
+						},
+						"description": "Toggle like for a comment."
+					},
+					"response": [
+						{
+							"name": "like-comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/toggle/c/65a1fd2994477c7a8e67ea83",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"toggle",
+										"c",
+										"65a1fd2994477c7a8e67ea83"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-rwsXyjdFGdxdyXXZjcYX0E7Qp6w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:42:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": \"liked comment successfully\",\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "unlike-comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/toggle/c/65a1fd2994477c7a8e67ea83",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"toggle",
+										"c",
+										"65a1fd2994477c7a8e67ea83"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-cTMhQHBChBlDVdIQ4no0zUAIvn0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:44:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": \"unliked comment successfully\",\n    \"message\": \"Success\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getLikedVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/likes/videos",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"likes",
+								"videos"
+							]
+						},
+						"description": "Get a list of videos liked by the current user."
+					},
+					"response": [
+						{
+							"name": "getLikedVideos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/likes/videos",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"likes",
+										"videos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"88e-SC6B8mnNQnhESvqYszP+6Fh5v88\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:45:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"likedVideo\": {\n                \"_id\": \"65a1f445dc8b8a211ae80b13\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705112641/lgqhd7lg4bhl4w5ckfa4.mp4\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705112737/ocdaqz4vk48jglyjdbxu.png\"\n                },\n                \"owner\": \"659ea90de661aab623b18f62\",\n                \"title\": \"Suzume intro scene.\",\n                \"description\": \"Suzume is not only one of the best films of 2023 it is one of the greatest animation films of all time. This is a film that is guaranteed to be classed as one of the most visually stunning films of all time\",\n                \"duration\": 13,\n                \"createdAt\": \"2024-01-13T02:24:05.617Z\",\n                \"isPublished\": true,\n                \"views\": 6,\n                \"ownerDetails\": {\n                    \"username\": \"spiderman\",\n                    \"fullName\": \"marvel spiderman\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704896778/ct0koeupddumzhaj4koc.png\"\n                    }\n                }\n            }\n        },\n        {\n            \"likedVideo\": {\n                \"_id\": \"65a25a7b7a5f7558085a10f0\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705138805/hiuu2ox5vptrnhsn85sz.mp4\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705138810/xvdg5kapuan4n3wl4nwk.png\"\n                },\n                \"owner\": \"65a2248a634e2db8fd832db1\",\n                \"title\": \"Bleach episode 7 intro scene(HEAT OF BATTLE)\",\n                \"description\": \"Heat of battle full bgm + intro orchestral version\",\n                \"duration\": 124.110998,\n                \"isPublished\": true,\n                \"createdAt\": \"2024-01-13T09:40:11.327Z\",\n                \"ownerDetails\": {\n                    \"username\": \"chai\",\n                    \"fullName\": \"chaiaurcode\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125315/nqapndmrm3onmwuke1br.jpg\"\n                    }\n                }\n            }\n        },\n        {\n            \"likedVideo\": {\n                \"_id\": \"65a1f6f2c1a21854670faad4\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705113325/roaplxoz8jehdkobl1vk.mp4\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705113330/wvfg5ovmbsj72ppcr6re.png\"\n                },\n                \"owner\": \"659ea90de661aab623b18f62\",\n                \"title\": \"Sukuna vs Jogo\",\n                \"description\": \"Sukuna killa jogo S2E16\",\n                \"duration\": 20.228542,\n                \"createdAt\": \"2024-01-13T02:35:30.864Z\",\n                \"isPublished\": true,\n                \"ownerDetails\": {\n                    \"username\": \"spiderman\",\n                    \"fullName\": \"marvel spiderman\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704896778/ct0koeupddumzhaj4koc.png\"\n                    }\n                }\n            }\n        }\n    ],\n    \"message\": \"liked videos fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "**Like Endpoints**"
+		},
+		{
+			"name": "Tweet",
+			"item": [
+				{
+					"name": "create-Tweet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Are web devs software Devs?.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/tweet/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"tweet",
+								""
+							],
+							"query": [
+								{
+									"key": "contnet",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Create a new tweet."
+					},
+					"response": [
+						{
+							"name": "create-Tweet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "what do u think about engineering colleges.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/tweet/",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tweet",
+										""
+									],
+									"query": [
+										{
+											"key": "contnet",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"123-45u563/NrR0gB52AaAOCU8Qagh0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:48:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"content\": \"what do u think about engineering colleges.\",\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"_id\": \"65a25c677a5f7558085a1127\",\n        \"createdAt\": \"2024-01-13T09:48:23.872Z\",\n        \"updatedAt\": \"2024-01-13T09:48:23.872Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Tweet created successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "edit-Tweet",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Thank you Hitesh Sir !!!!!!!!!!.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/tweet/65a25c207a5f7558085a1121",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"tweet",
+								"65a25c207a5f7558085a1121"
+							]
+						},
+						"description": "Update an existing tweet."
+					},
+					"response": [
+						{
+							"name": "edit-Tweet",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "Thank you Hitesh Sir !!!!!!!!!!.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/tweet/65a25c207a5f7558085a1121",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tweet",
+										"65a25c207a5f7558085a1121"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-a6Su9cUzb9ZBYDLmPcoqYvZyd/Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:47:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a25c207a5f7558085a1121\",\n        \"content\": \"Thank you Hitesh Sir !!!!!!!!!!.\",\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"createdAt\": \"2024-01-13T09:47:12.562Z\",\n        \"updatedAt\": \"2024-01-13T09:47:39.249Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Tweet updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "delete-Tweet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/tweet/65a25c677a5f7558085a1127",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"tweet",
+								"65a25c677a5f7558085a1127"
+							]
+						},
+						"description": "Delete a tweet."
+					},
+					"response": [
+						{
+							"name": "delete-Tweet",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/tweet/65a25c677a5f7558085a1127",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tweet",
+										"65a25c677a5f7558085a1127"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-0hWE81lWeVSyBfv8cAv2oexpuEM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:48:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {},\n    \"message\": \"Tweet deleted successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getUserTweets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/tweet/user/65a2248a634e2db8fd832db1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"tweet",
+								"user",
+								"65a2248a634e2db8fd832db1"
+							]
+						},
+						"description": "Get all tweets created by a specific user."
+					},
+					"response": [
+						{
+							"name": "getUserTweets",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/tweet/user/65a2248a634e2db8fd832db1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tweet",
+										"user",
+										"65a2248a634e2db8fd832db1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "694"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b6-y/SiOGGYC06grKKH6zVt1Ry3ALM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:51:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"65a25c207a5f7558085a1121\",\n            \"content\": \"Thank you Hitesh Sir !!!!!!!!!!.\",\n            \"createdAt\": \"2024-01-13T09:47:12.562Z\",\n            \"ownerDetails\": {\n                \"_id\": \"65a2248a634e2db8fd832db1\",\n                \"username\": \"chai\",\n                \"avatar\": {\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125315/nqapndmrm3onmwuke1br.jpg\"\n                }\n            },\n            \"likesCount\": 0\n        },\n        {\n            \"_id\": \"65a25cfb7a5f7558085a1137\",\n            \"content\": \"Are web devs software Devs?.\",\n            \"createdAt\": \"2024-01-13T09:50:51.721Z\",\n            \"ownerDetails\": {\n                \"_id\": \"65a2248a634e2db8fd832db1\",\n                \"username\": \"chai\",\n                \"avatar\": {\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1705125315/nqapndmrm3onmwuke1br.jpg\"\n                }\n            },\n            \"likesCount\": 0\n        }\n    ],\n    \"message\": \"Tweets fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "Tweet Endpoints"
+		},
+		{
+			"name": "subscriptions",
+			"item": [
+				{
+					"name": "toggleSubscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/subscriptions/c/65a2248a634e2db8fd832db1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"subscriptions",
+								"c",
+								"65a2248a634e2db8fd832db1"
+							]
+						},
+						"description": "Subscribe / Unsubscribe a channel."
+					},
+					"response": [
+						{
+							"name": "subscribe-channel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subscriptions/c/659ea90de661aab623b18f62",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subscriptions",
+										"c",
+										"659ea90de661aab623b18f62"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-Mx3rdB/+iU2Ba7zFmsP+5TIP2go\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:51:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"subscribed\": true\n    },\n    \"message\": \"subscribed successfully\",\n    \"success\": true\n}"
+						},
+						{
+							"name": "unsubscribe-channel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subscriptions/c/659ea90de661aab623b18f62",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subscriptions",
+										"c",
+										"659ea90de661aab623b18f62"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-zTKPOtKZWfkV38YnkUtwRm6jOLE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:51:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"subscribed\": false\n    },\n    \"message\": \"unsunscribed successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getUserChannelSubscribers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/subscriptions/c/659e6a2ce37e2521fdaf88a8",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"subscriptions",
+								"c",
+								"659e6a2ce37e2521fdaf88a8"
+							]
+						},
+						"description": "Get a list of subscribers for a specific channel."
+					},
+					"response": [
+						{
+							"name": "getUserChannelSubscribers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subscriptions/c/658ae0487b4f8ee443020604",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subscriptions",
+										"c",
+										"658ae0487b4f8ee443020604"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "587"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24b-CkV6Q9y6kRAydtvtD+72QQm5EHY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:52:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"subscriber\": {\n                \"_id\": \"658ae0487b4f8ee443020604\",\n                \"username\": \"hruthik28\",\n                \"fullName\": \"Hruthik\",\n                \"avatar\": {\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693563/bboqn6owxzvkwvp7hpqq.png\"\n                },\n                \"subscribedToSubscriber\": true,\n                \"subscribersCount\": 2\n            }\n        },\n        {\n            \"subscriber\": {\n                \"_id\": \"659e6a2ce37e2521fdaf88a8\",\n                \"username\": \"deepthi\",\n                \"fullName\": \"Deepthi\",\n                \"avatar\": {\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704880683/yku2brrhaf0srmkvcauj.png\"\n                },\n                \"subscribedToSubscriber\": true,\n                \"subscribersCount\": 1\n            }\n        }\n    ],\n    \"message\": \"subscribers fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getSubscribedChannels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/subscriptions/u/659e6a2ce37e2521fdaf88a8",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"subscriptions",
+								"u",
+								"659e6a2ce37e2521fdaf88a8"
+							]
+						},
+						"description": "Get a list of channels subscribed to by a specific user."
+					},
+					"response": [
+						{
+							"name": "getSubscribedChannels",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/subscriptions/u/659e6a2ce37e2521fdaf88a8",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"subscriptions",
+										"u",
+										"659e6a2ce37e2521fdaf88a8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"563-VHurA5rq3wz7SHpUA9JSoPDW8mk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:52:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"subscribedChannel\": {\n                \"_id\": \"658ae0487b4f8ee443020604\",\n                \"username\": \"hruthik28\",\n                \"fullName\": \"Hruthik\",\n                \"avatar\": {\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693563/bboqn6owxzvkwvp7hpqq.png\"\n                },\n                \"latestVideo\": {\n                    \"_id\": \"65a1ffef94477c7a8e67eabb\",\n                    \"videoFile\": {\n                        \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705115610/won0kepwclvjaq0tmotq.mp4\"\n                    },\n                    \"thumbnail\": {\n                        \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705115630/sqzr4yyi6hax2nuueh51.png\"\n                    },\n                    \"owner\": \"658ae0487b4f8ee443020604\",\n                    \"title\": \"Bleach \",\n                    \"description\": \"Yamamoto Genruisai v/s yhwach fight scene\",\n                    \"duration\": 17.809458,\n                    \"createdAt\": \"2024-01-13T03:13:51.164Z\"\n                }\n            }\n        },\n        {\n            \"subscribedChannel\": {\n                \"_id\": \"659ea90de661aab623b18f62\",\n                \"username\": \"spiderman\",\n                \"fullName\": \"marvel spiderman\",\n                \"avatar\": {\n                    \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704896778/ct0koeupddumzhaj4koc.png\"\n                },\n                \"latestVideo\": {\n                    \"_id\": \"65a1f6f2c1a21854670faad4\",\n                    \"videoFile\": {\n                        \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705113325/roaplxoz8jehdkobl1vk.mp4\"\n                    },\n                    \"thumbnail\": {\n                        \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705113330/wvfg5ovmbsj72ppcr6re.png\"\n                    },\n                    \"owner\": \"659ea90de661aab623b18f62\",\n                    \"title\": \"Sukuna vs Jogo\",\n                    \"description\": \"Sukuna killa jogo S2E16\",\n                    \"duration\": 20.228542,\n                    \"createdAt\": \"2024-01-13T02:35:30.864Z\"\n                }\n            }\n        }\n    ],\n    \"message\": \"subscribed channels fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "Subscription Endpoints"
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "createAComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Bleach TBW E7 was the peak.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/comment/65a25a7b7a5f7558085a10f0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"65a25a7b7a5f7558085a10f0"
+							]
+						},
+						"description": "Add a new comment to a video."
+					},
+					"response": [
+						{
+							"name": "add-comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "Bleach TBW E7 was the peak.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/comment/65a25a7b7a5f7558085a10f0",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"65a25a7b7a5f7558085a10f0"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "310"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"136-BOdkPg0hg6Dfub6JqYT2dS2E7hk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:54:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"data\": {\n        \"content\": \"Bleach TBW E7 was the peak.\",\n        \"video\": \"65a25a7b7a5f7558085a10f0\",\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"_id\": \"65a25dc27a5f7558085a114a\",\n        \"createdAt\": \"2024-01-13T09:54:10.180Z\",\n        \"updatedAt\": \"2024-01-13T09:54:10.180Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Comment added successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "editAComment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Bleach TBW E7 was the peak and whts with the bgm.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/comment/c/65a25dc27a5f7558085a114a",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"c",
+								"65a25dc27a5f7558085a114a"
+							]
+						},
+						"description": "Edit an existing comment."
+					},
+					"response": [
+						{
+							"name": "edit-comment",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "Bleach TBW E7 was the peak and whts with the bgm.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/comment/c/65a25dc27a5f7558085a114a",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"c",
+										"65a25dc27a5f7558085a114a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "333"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14d-aalf2btRr7C5r5mfm3K4ocBHPz0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:56:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a25dc27a5f7558085a114a\",\n        \"content\": \"Bleach TBW E7 was the peak and whts with the bgm.\",\n        \"video\": \"65a25a7b7a5f7558085a10f0\",\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"createdAt\": \"2024-01-13T09:54:10.180Z\",\n        \"updatedAt\": \"2024-01-13T09:56:03.783Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Comment edited successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteAComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/comment/c/65a25e137a5f7558085a1151",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"c",
+								"65a25e137a5f7558085a1151"
+							]
+						},
+						"description": "Delete a comment."
+					},
+					"response": [
+						{
+							"name": "delete-comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/comment/c/65a25e137a5f7558085a1151",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"c",
+										"65a25e137a5f7558085a1151"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-AtfOCO7zzomJbTm7GxdEiubUjsE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:55:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {},\n    \"message\": \"Comment deleted successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "get-video-comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/comment/65a1ffef94477c7a8e67eabb",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"comment",
+								"65a1ffef94477c7a8e67eabb"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get comments for a specific video."
+					},
+					"response": [
+						{
+							"name": "get-video-comments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/comment/65a1f445dc8b8a211ae80b13?page=1&limit=5",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"comment",
+										"65a1f445dc8b8a211ae80b13"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1447"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5a7-M94IqgHEc/3Q3jdwUwkp4V7P6q4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:56:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"docs\": [\n            {\n                \"_id\": \"65a1fb6394477c7a8e67ea51\",\n                \"content\": \"likes please\",\n                \"createdAt\": \"2024-01-13T02:54:27.830Z\",\n                \"owner\": {\n                    \"username\": \"hruthik28\",\n                    \"fullName\": \"Hruthik\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693563/bboqn6owxzvkwvp7hpqq.png\"\n                    }\n                },\n                \"likesCount\": 1,\n                \"isLiked\": false\n            },\n            {\n                \"_id\": \"65a1fd1394477c7a8e67ea7f\",\n                \"content\": \"makato shinkai never dissapoints\",\n                \"createdAt\": \"2024-01-13T03:01:39.087Z\",\n                \"owner\": {\n                    \"username\": \"hruthik28\",\n                    \"fullName\": \"Hruthik\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693563/bboqn6owxzvkwvp7hpqq.png\"\n                    }\n                },\n                \"likesCount\": 1,\n                \"isLiked\": false\n            },\n            {\n                \"_id\": \"65a1fd2994477c7a8e67ea83\",\n                \"content\": \"tobirama sagashteiru\",\n                \"createdAt\": \"2024-01-13T03:02:01.525Z\",\n                \"owner\": {\n                    \"username\": \"hruthik28\",\n                    \"fullName\": \"Hruthik\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1703693563/bboqn6owxzvkwvp7hpqq.png\"\n                    }\n                },\n                \"likesCount\": 2,\n                \"isLiked\": false\n            },\n            {\n                \"_id\": \"65a200f694477c7a8e67eaeb\",\n                \"content\": \"i watched suzume i theatres it was amazing\",\n                \"createdAt\": \"2024-01-13T03:18:14.501Z\",\n                \"owner\": {\n                    \"username\": \"deepthi\",\n                    \"fullName\": \"Deepthi\",\n                    \"avatar\": {\n                        \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704880683/yku2brrhaf0srmkvcauj.png\"\n                    }\n                },\n                \"likesCount\": 0,\n                \"isLiked\": false\n            }\n        ],\n        \"totalDocs\": 4,\n        \"limit\": 5,\n        \"page\": 1,\n        \"totalPages\": 1,\n        \"pagingCounter\": 1,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": false,\n        \"prevPage\": null,\n        \"nextPage\": null\n    },\n    \"message\": \"Comments fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "**Comment Enpoints**"
+		},
+		{
+			"name": "playlist",
+			"item": [
+				{
+					"name": "createAPlaylist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "anime",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "anime related content goes here",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/playlist/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								""
+							]
+						},
+						"description": "Create a new playlist."
+					},
+					"response": [
+						{
+							"name": "create-playlis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "anime",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "anime related content goes here",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/playlist/",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"139-lma5eMUmUnVAnlYzxdvJdnpP1Mo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:57:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"name\": \"anime\",\n        \"description\": \"anime related content goes here\",\n        \"videos\": [],\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"_id\": \"65a25e817a5f7558085a115d\",\n        \"createdAt\": \"2024-01-13T09:57:21.649Z\",\n        \"updatedAt\": \"2024-01-13T09:57:21.649Z\",\n        \"__v\": 0\n    },\n    \"message\": \"playlist created successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "addVideoToPlaylist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/add/65a25a7b7a5f7558085a10f0/65a25e817a5f7558085a115d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"add",
+								"65a25a7b7a5f7558085a10f0",
+								"65a25e817a5f7558085a115d"
+							]
+						},
+						"description": "Add a video to a playlist."
+					},
+					"response": [
+						{
+							"name": "add-video-to-playlist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/add/65a25a7b7a5f7558085a10f0/65a25e817a5f7558085a115d",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"add",
+										"65a25a7b7a5f7558085a10f0",
+										"65a25e817a5f7558085a115d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15a-Fmo3rJGTY0xs0J8CHJvH58QMdeo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:58:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a25e817a5f7558085a115d\",\n        \"name\": \"anime\",\n        \"description\": \"anime related content goes here\",\n        \"videos\": [\n            \"65a25a7b7a5f7558085a10f0\"\n        ],\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"createdAt\": \"2024-01-13T09:57:21.649Z\",\n        \"updatedAt\": \"2024-01-13T09:58:24.037Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Added video to playlist successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "removeVideoFromPlaylist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/remove/65a25a7b7a5f7558085a10f0/65a25e817a5f7558085a115d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"remove",
+								"65a25a7b7a5f7558085a10f0",
+								"65a25e817a5f7558085a115d"
+							]
+						},
+						"description": "Remove a video from a playlist."
+					},
+					"response": [
+						{
+							"name": "remove-video-from-playlist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/remove/65a25a7b7a5f7558085a10f0/65a25e817a5f7558085a115d",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"remove",
+										"65a25a7b7a5f7558085a10f0",
+										"65a25e817a5f7558085a115d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "324"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"144-f/fG0Xzd/nPs9IduzOVwfqqDzdI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 09:59:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a25e817a5f7558085a115d\",\n        \"name\": \"anime\",\n        \"description\": \"anime related content goes here\",\n        \"videos\": [],\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"createdAt\": \"2024-01-13T09:57:21.649Z\",\n        \"updatedAt\": \"2024-01-13T09:59:10.947Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Removed video from playlist successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getPlaylistById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/65a1f8c3c1a21854670fab13",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"65a1f8c3c1a21854670fab13"
+							]
+						},
+						"description": "Get details of a specific playlist."
+					},
+					"response": [
+						{
+							"name": "getPlaylistById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/65a1f8c3c1a21854670fab13",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"65a1f8c3c1a21854670fab13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1409"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"581-PYn+ZLtspOycpqwCYQZbb88LxJ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:04:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a1f8c3c1a21854670fab13\",\n        \"name\": \"my playlist\",\n        \"description\": \"every video of channel\",\n        \"owner\": {\n            \"username\": \"spiderman\",\n            \"fullName\": \"marvel spiderman\",\n            \"avatar\": {\n                \"url\": \"https://res.cloudinary.com/dgcy4fcqt/image/upload/v1704896778/ct0koeupddumzhaj4koc.png\"\n            }\n        },\n        \"createdAt\": \"2024-01-13T02:43:15.147Z\",\n        \"updatedAt\": \"2024-01-13T02:45:15.444Z\",\n        \"videos\": [\n            {\n                \"_id\": \"65a1f6f2c1a21854670faad4\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705113325/roaplxoz8jehdkobl1vk.mp4\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705113330/wvfg5ovmbsj72ppcr6re.png\"\n                },\n                \"title\": \"Sukuna vs Jogo\",\n                \"description\": \"Sukuna killa jogo S2E16\",\n                \"duration\": 20.228542,\n                \"createdAt\": \"2024-01-13T02:35:30.864Z\"\n            },\n            {\n                \"_id\": \"65a1f445dc8b8a211ae80b13\",\n                \"videoFile\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705112641/lgqhd7lg4bhl4w5ckfa4.mp4\"\n                },\n                \"thumbnail\": {\n                    \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705112737/ocdaqz4vk48jglyjdbxu.png\"\n                },\n                \"title\": \"Suzume intro scene.\",\n                \"description\": \"Suzume is not only one of the best films of 2023 it is one of the greatest animation films of all time. This is a film that is guaranteed to be classed as one of the most visually stunning films of all time\",\n                \"duration\": 13,\n                \"createdAt\": \"2024-01-13T02:24:05.617Z\",\n                \"views\": 6\n            }\n        ],\n        \"totalVideos\": 2,\n        \"totalViews\": 6\n    },\n    \"message\": \"playlist fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getPlaylistsByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/playlist/user/65a2248a634e2db8fd832db1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"user",
+								"65a2248a634e2db8fd832db1"
+							]
+						},
+						"description": "Get all playlists created by a specific user."
+					},
+					"response": [
+						{
+							"name": "getPlaylistsByUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/playlist/user/65a2248a634e2db8fd832db1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"user",
+										"65a2248a634e2db8fd832db1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10d-cVBnPYf7kE97TqBSUmtasvYV0SE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:05:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"65a25e817a5f7558085a115d\",\n            \"name\": \"Bleach bgms\",\n            \"description\": \"All Bleach TYBA bgms in the playlist\",\n            \"updatedAt\": \"2024-01-13T10:03:40.271Z\",\n            \"totalVideos\": 0,\n            \"totalViews\": 0\n        }\n    ],\n    \"message\": \"User playlists fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "upadtePlaylist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bleach bgms",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "All Bleach TYBA bgms in the playlist",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/playlist/65a25e817a5f7558085a115d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"playlist",
+								"65a25e817a5f7558085a115d"
+							]
+						},
+						"description": "Update an existing playlist."
+					},
+					"response": [
+						{
+							"name": "upadtePlaylist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Bleach bgms",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "All Bleach TYBA bgms in the playlist",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/playlist/65a25e817a5f7558085a115d",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"playlist",
+										"65a25e817a5f7558085a115d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "324"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"144-w7ea3ZZO2LAueN0esDuO8uDHmNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:03:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"65a25e817a5f7558085a115d\",\n        \"name\": \"Bleach bgms\",\n        \"description\": \"All Bleach TYBA bgms in the playlist\",\n        \"videos\": [],\n        \"owner\": \"65a2248a634e2db8fd832db1\",\n        \"createdAt\": \"2024-01-13T09:57:21.649Z\",\n        \"updatedAt\": \"2024-01-13T10:03:40.271Z\",\n        \"__v\": 0\n    },\n    \"message\": \"playlist updated successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "Playlist Endpoints"
+		},
+		{
+			"name": "Healthcheck",
+			"item": [
+				{
+					"name": "healthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/healthcheck",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"healthcheck"
+							]
+						},
+						"description": "Check the backend's health status."
+					},
+					"response": []
+				}
+			],
+			"description": "HealthCheck Endpoints"
+		},
+		{
+			"name": "dashboard",
+			"item": [
+				{
+					"name": "getChannelStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/dashboard/stats",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"dashboard",
+								"stats"
+							]
+						},
+						"description": "Get channel statistics (views, subscribers, videos, likes)."
+					},
+					"response": [
+						{
+							"name": "getChannelStats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/dashboard/stats",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"dashboard",
+										"stats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-GEfdl07s2pA0U3UATCUq62xmxqI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:08:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": {\n        \"totalSubscribers\": 3,\n        \"totalLikes\": 1,\n        \"totalViews\": 0,\n        \"totalVideos\": 1\n    },\n    \"message\": \"channel stats fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "getChannelVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/dashboard/videos",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"dashboard",
+								"videos"
+							]
+						},
+						"description": "Get videos uploaded by the current user's channel."
+					},
+					"response": [
+						{
+							"name": "getChannelVideos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/dashboard/videos",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"dashboard",
+										"videos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "541"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21d-RADGcdJQundpuVTeIOBKq1ne+4A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Jan 2024 10:09:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"data\": [\n        {\n            \"_id\": \"65a25a7b7a5f7558085a10f0\",\n            \"videoFile\": {\n                \"url\": \"http://res.cloudinary.com/dgcy4fcqt/video/upload/v1705138805/hiuu2ox5vptrnhsn85sz.mp4\"\n            },\n            \"thumbnail\": {\n                \"url\": \"http://res.cloudinary.com/dgcy4fcqt/image/upload/v1705138810/xvdg5kapuan4n3wl4nwk.png\"\n            },\n            \"title\": \"Bleach episode 7 intro scene(HEAT OF BATTLE)\",\n            \"description\": \"Heat of battle full bgm + intro orchestral version\",\n            \"isPublished\": true,\n            \"createdAt\": {\n                \"year\": 2024,\n                \"month\": 1,\n                \"day\": 13\n            },\n            \"likesCount\": 1\n        }\n    ],\n    \"message\": \"channel stats fetched successfully\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"description": "Dashboard Endpoints"
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:4000/api/v1"
+		}
+	]
+}
