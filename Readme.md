@@ -10,10 +10,10 @@ This project is a **YouTube + Twitter** backend that integrates YouTube-like fun
 
 ## Important Links
 
-| Content           | Link                                                               |
-| ----------------- | ------------------------------------------------------------------ |
-| API Documentation | [Click here](#)                                                    |
-| Model Diagram     | [Click here](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj) |
+| Content           | Link                                                                     |
+| ----------------- | ------------------------------------------------------------------------ |
+| API Documentation | [Click here](https://documenter.getpostman.com/view/26810555/2sAXqp8j2D) |
+| Model Diagram     | [Click here](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj)       |
 
 ## Features
 
