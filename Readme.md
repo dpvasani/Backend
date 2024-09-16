@@ -1,5 +1,3 @@
-Here’s an updated README for your project:
-
 # YouTube + Twitter Backend
 
 ## Introduction
