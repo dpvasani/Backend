@@ -70,6 +70,12 @@ This project is a **YouTube + Twitter** backend that integrates YouTube-like fun
 - **MongoDB**
 - **Cloudinary** (for image and video storage, requires an account)
 
+## Figma
+
+[Figma Prototype](https://www.figma.com/proto/shmxWL5FKRO5GNOPPopBg6/PLAY?node-id=1-38943&t=aU8UmiByLnnYBJQr-1)
+
+
+
 ## Installation and Setup
 
 1. **Clone the repository:**
