@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "src/index.js",
-   "build": "npm install --production && echo 'Build complete!'"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "Backend",
@@ -31,7 +30,6 @@
     "mongoose": "^8.6.0",
     "mongoose-aggregate-paginate-v2": "^1.1.2",
     "multer": "^1.4.5-lts.1",
-    "prettier": "^3.3.3",
-     "nodemon": "^3.1.4"
+    "prettier": "^3.3.3"
   }
 }
