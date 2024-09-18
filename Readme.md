@@ -1,8 +1,8 @@
-# YouTwit Backend
+# YouTweet Backend
 
 ## Introduction
 
-This project is a **YouTube + Twitter** backend that integrates YouTube-like functionalities with a Twitter-style tweet system. It includes essential features like user management, video uploading, playlist creation, and more. Explore the API documentation for in-depth details.
+This project is a **YouTweet** backend that integrates YouTube-like functionalities with a Twitter-style tweet system. It includes essential features like user management, video uploading, playlist creation, and more. Explore the API documentation for in-depth details.
 
 <!-- https://documenter.getpostman.com/view/28570926/2s9YsNdVwW -->
 
