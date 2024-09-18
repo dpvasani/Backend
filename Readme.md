@@ -1,4 +1,4 @@
-# YouTube + Twitter Backend
+# YouTwit Backend
 
 ## Introduction
 
