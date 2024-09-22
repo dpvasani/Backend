@@ -72,7 +72,7 @@ This project is a **YouTweet** backend that integrates YouTube-like functionalit
 
 ## Figma
 
-[Figma Prototype](https://www.figma.com/proto/shmxWL5FKRO5GNOPPopBg6/PLAY?node-id=1-38943&t=aU8UmiByLnnYBJQr-1)
+[Figma Prototype](https://www.figma.com/proto/V0Jj1loPHpOro3PSScJjV9/YouTweet?node-id=1-38943&node-type=canvas&t=0aqiTaBG2V3Pcdm4-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)
 
 
 
