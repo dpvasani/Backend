@@ -24,7 +24,7 @@ This project is a **YouTweet** backend that integrates YouTube-like functionalit
 ### Video Management
 
 - Uploading and publishing videos
-- Video search, sorting, and pagination
+- Video search, sorting
 - Video editing and deletion
 - Control over video visibility (publish/un publish)
 
