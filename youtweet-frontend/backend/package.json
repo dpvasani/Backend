@@ -1,0 +1,8 @@
+@@ .. @@
+ {
+-  "name": "backend",
++  "name": "youtweet-backend",
+   "version": "1.0.0",
+-  "description": "Backend Revision Journey With Production Grade",
++  "description": "YouTweet Backend - Video sharing platform with social features",
+   "main": "index.js",
