@@ -9,6 +9,9 @@ import {
   UserGroupIcon,
   Cog6ToothIcon,
   PlayIcon,
+  BookmarkIcon,
+  ChatBubbleLeftRightIcon,
+  RectangleStackIcon,
 } from '@heroicons/react/24/outline';
 import {
   HomeIcon as HomeIconSolid,
@@ -17,6 +20,9 @@ import {
   HeartIcon as HeartIconSolid,
   UserGroupIcon as UserGroupIconSolid,
   PlayIcon as PlayIconSolid,
+  BookmarkIcon as BookmarkIconSolid,
+  ChatBubbleLeftRightIcon as ChatBubbleLeftRightIconSolid,
+  RectangleStackIcon as RectangleStackIconSolid,
 } from '@heroicons/react/24/solid';
 import { cn } from '../../utils/cn';
 
@@ -39,16 +45,17 @@ const Sidebar = ({ isOpen, onClose }) => {
       iconSolid: FireIconSolid,
       current: location.pathname === '/trending',
     },
-  ];
-
-  const authenticatedNavigation = [
     {
       name: 'Subscriptions',
       href: '/subscriptions',
       icon: UserGroupIcon,
       iconSolid: UserGroupIconSolid,
       current: location.pathname === '/subscriptions',
+      requireAuth: true,
     },
+  ];
+
+  const libraryNavigation = [
     {
       name: 'Your Videos',
       href: '/your-videos',
@@ -70,23 +77,54 @@ const Sidebar = ({ isOpen, onClose }) => {
       iconSolid: HeartIconSolid,
       current: location.pathname === '/liked-videos',
     },
+    {
+      name: 'Playlists',
+      href: '/playlists',
+      icon: RectangleStackIcon,
+      iconSolid: RectangleStackIconSolid,
+      current: location.pathname === '/playlists',
+    },
+    {
+      name: 'History',
+      href: '/history',
+      icon: ClockIcon,
+      iconSolid: ClockIconSolid,
+      current: location.pathname === '/history',
+    },
+  ];
+
+  const socialNavigation = [
+    {
+      name: 'Tweets',
+      href: '/tweets',
+      icon: ChatBubbleLeftRightIcon,
+      iconSolid: ChatBubbleLeftRightIconSolid,
+      current: location.pathname === '/tweets',
+    },
   ];
 
   const NavItem = ({ item }) => {
     const Icon = item.current ? item.iconSolid : item.icon;
+    
+    if (item.requireAuth && !isAuthenticated) {
+      return null;
+    }
     
     return (
       <Link
         to={item.href}
         onClick={onClose}
         className={cn(
-          'flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200',
+          'flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200 group',
           item.current
-            ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+            ? 'bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300'
             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
         )}
       >
-        <Icon className="mr-3 h-5 w-5 flex-shrink-0" />
+        <Icon className={cn(
+          "mr-3 h-5 w-5 flex-shrink-0",
+          item.current ? "text-red-600 dark:text-red-400" : "text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300"
+        )} />
         {item.name}
       </Link>
     );
@@ -119,17 +157,35 @@ const Sidebar = ({ isOpen, onClose }) => {
               ))}
             </div>
 
-            {/* Authenticated Navigation */}
+            {/* Library Section */}
             {isAuthenticated && (
               <>
                 <div className="border-t border-gray-200 dark:border-gray-700 my-4" />
+                <div className="px-4 py-2">
+                  <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    Library
+                  </h3>
+                </div>
                 <div className="space-y-1">
-                  {authenticatedNavigation.map((item) => (
+                  {libraryNavigation.map((item) => (
                     <NavItem key={item.name} item={item} />
                   ))}
                 </div>
               </>
             )}
+
+            {/* Social Section */}
+            <div className="border-t border-gray-200 dark:border-gray-700 my-4" />
+            <div className="px-4 py-2">
+              <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                Social
+              </h3>
+            </div>
+            <div className="space-y-1">
+              {socialNavigation.map((item) => (
+                <NavItem key={item.name} item={item} />
+              ))}
+            </div>
 
             {/* Settings */}
             <div className="border-t border-gray-200 dark:border-gray-700 my-4" />
@@ -138,13 +194,16 @@ const Sidebar = ({ isOpen, onClose }) => {
                 to="/settings"
                 onClick={onClose}
                 className={cn(
-                  'flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200',
+                  'flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200 group',
                   location.pathname === '/settings'
-                    ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+                    ? 'bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300'
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                 )}
               >
-                <Cog6ToothIcon className="mr-3 h-5 w-5 flex-shrink-0" />
+                <Cog6ToothIcon className={cn(
+                  "mr-3 h-5 w-5 flex-shrink-0",
+                  location.pathname === '/settings' ? "text-red-600 dark:text-red-400" : "text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300"
+                )} />
                 Settings
               </Link>
             </div>
@@ -164,7 +223,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                       className="mr-3 h-8 w-8 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="mr-3 h-8 w-8 bg-primary-500 rounded-full flex items-center justify-center">
+                    <div className="mr-3 h-8 w-8 bg-red-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-sm font-medium">
                         {user.fullName?.charAt(0)?.toUpperCase()}
                       </span>
@@ -177,6 +236,25 @@ const Sidebar = ({ isOpen, onClose }) => {
                     </p>
                   </div>
                 </Link>
+              </div>
+            )}
+
+            {/* Sign In Prompt for Unauthenticated Users */}
+            {!isAuthenticated && (
+              <div className="border-t border-gray-200 dark:border-gray-700 my-4 pt-4">
+                <div className="px-4 py-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    Sign in to like videos, comment, and subscribe.
+                  </p>
+                  <Link
+                    to="/login"
+                    className="inline-flex items-center px-4 py-2 border border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-full text-sm font-medium transition-colors"
+                    onClick={onClose}
+                  >
+                    <UserCircleIcon className="h-4 w-4 mr-2" />
+                    Sign In
+                  </Link>
+                </div>
               </div>
             )}
           </nav>

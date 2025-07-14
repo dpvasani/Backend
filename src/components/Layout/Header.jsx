@@ -6,7 +6,12 @@ import {
   BellIcon, 
   UserCircleIcon,
   Bars3Icon,
-  XMarkIcon
+  XMarkIcon,
+  PlusIcon,
+  VideoCameraIcon,
+  HomeIcon,
+  FireIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline';
 import { logoutUser } from '../../store/slices/authSlice';
 import { cn } from '../../utils/cn';
@@ -37,11 +42,11 @@ const Header = () => {
     <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo and Mobile Menu Button */}
-          <div className="flex items-center">
+          {/* Left Side - Logo and Menu */}
+          <div className="flex items-center space-x-4">
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="lg:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               {showMobileMenu ? (
                 <XMarkIcon className="h-6 w-6" />
@@ -50,32 +55,30 @@ const Header = () => {
               )}
             </button>
             
-            <Link to="/" className="flex items-center ml-2 md:ml-0">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">YT</span>
-                </div>
-                <span className="text-xl font-bold text-gray-900 dark:text-white">
-                  YouTweet
-                </span>
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                <VideoCameraIcon className="h-6 w-6 text-white" />
               </div>
+              <span className="text-2xl font-bold text-gray-900 dark:text-white">
+                YouTweet
+              </span>
             </Link>
           </div>
 
-          {/* Search Bar */}
+          {/* Center - Search Bar */}
           <div className="hidden md:flex flex-1 max-w-2xl mx-8">
             <form onSubmit={handleSearch} className="w-full">
-              <div className="relative">
+              <div className="relative flex">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search videos, channels..."
-                  className="w-full pl-4 pr-12 py-2 border border-gray-300 dark:border-gray-600 rounded-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="flex-1 px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-l-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-500 dark:placeholder-gray-400"
                 />
                 <button
                   type="submit"
-                  className="absolute right-0 top-0 h-full px-4 text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="px-6 py-2.5 bg-gray-50 dark:bg-gray-700 border border-l-0 border-gray-300 dark:border-gray-600 rounded-r-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
                 >
                   <MagnifyingGlassIcon className="h-5 w-5" />
                 </button>
@@ -83,25 +86,26 @@ const Header = () => {
             </form>
           </div>
 
-          {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
-            {/* Mobile Search Button */}
-            <button className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">
+          {/* Right Side - Actions */}
+          <div className="flex items-center space-x-3">
+            {/* Mobile Search */}
+            <button className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
               <MagnifyingGlassIcon className="h-6 w-6" />
             </button>
 
             {isAuthenticated ? (
               <>
-                {/* Upload Button */}
+                {/* Create Button */}
                 <Link
                   to="/upload"
-                  className="hidden sm:inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                  className="flex items-center space-x-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition-colors duration-200"
                 >
-                  Upload
+                  <PlusIcon className="h-5 w-5" />
+                  <span className="hidden sm:inline">Create</span>
                 </Link>
 
                 {/* Notifications */}
-                <button className="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md relative">
+                <button className="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full relative">
                   <BellIcon className="h-6 w-6" />
                   <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                 </button>
@@ -124,7 +128,15 @@ const Header = () => {
                   </button>
 
                   {showUserMenu && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
+                    <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50">
+                      <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+                        <p className="text-sm font-medium text-gray-900 dark:text-white">
+                          {user?.fullName}
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          @{user?.username}
+                        </p>
+                      </div>
                       <Link
                         to={`/channel/${user?.username}`}
                         className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -137,7 +149,7 @@ const Header = () => {
                         className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                         onClick={() => setShowUserMenu(false)}
                       >
-                        Dashboard
+                        YouTube Studio
                       </Link>
                       <Link
                         to="/settings"
@@ -161,13 +173,13 @@ const Header = () => {
               <div className="flex items-center space-x-3">
                 <Link
                   to="/login"
-                  className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium"
+                  className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium px-4 py-2 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                 >
                   Sign In
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-medium transition-colors duration-200 border border-red-600"
                 >
                   Sign Up
                 </Link>
@@ -178,37 +190,49 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div className="md:hidden border-t border-gray-200 dark:border-gray-700 py-4">
+          <div className="lg:hidden border-t border-gray-200 dark:border-gray-700 py-4">
             <div className="space-y-2">
               <Link
                 to="/"
-                className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                 onClick={() => setShowMobileMenu(false)}
               >
-                Home
+                <HomeIcon className="h-5 w-5" />
+                <span>Home</span>
               </Link>
               <Link
                 to="/trending"
-                className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                 onClick={() => setShowMobileMenu(false)}
               >
-                Trending
+                <FireIcon className="h-5 w-5" />
+                <span>Trending</span>
               </Link>
               {isAuthenticated && (
                 <>
                   <Link
                     to="/subscriptions"
-                    className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                    className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                     onClick={() => setShowMobileMenu(false)}
                   >
-                    Subscriptions
+                    <UserCircleIcon className="h-5 w-5" />
+                    <span>Subscriptions</span>
+                  </Link>
+                  <Link
+                    to="/history"
+                    className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    <ClockIcon className="h-5 w-5" />
+                    <span>History</span>
                   </Link>
                   <Link
                     to="/upload"
-                    className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                    className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                     onClick={() => setShowMobileMenu(false)}
                   >
-                    Upload Video
+                    <PlusIcon className="h-5 w-5" />
+                    <span>Upload Video</span>
                   </Link>
                 </>
               )}
